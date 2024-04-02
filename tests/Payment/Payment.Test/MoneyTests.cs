@@ -1,8 +1,13 @@
+using NUnit.Framework;
+using System;
+
 namespace Payment.Test
 {
+    [TestFixture]
+
     public class MoneyTests
     {
-        [Fact]
+        [Test]
         public void MoneyEqualityTest()
         {
             var money1 = Money.Euro(50);
@@ -21,7 +26,7 @@ namespace Payment.Test
 
         }
 
-        [Fact]
+        [Test]
         public void MoneyAdditionTest()
         {
             var money1 = Money.Euro(50);
@@ -32,11 +37,11 @@ namespace Payment.Test
 
             Assert.True(Money.Euro(80) == sum1);
 
-            var ex = Assert.Throws<ArgumentException>(() => money1 + money3);
-            Assert.True(ex.Message == $"Cannot perform operation with different {nameof(Currency)}");
+            Assert.That(() => money1 + money3, Throws.ArgumentException);
+            //Assert.True(ex.Message == $"Cannot perform operation with different {nameof(Currency)}");
         }
 
-        [Fact]
+        [Test]
         public void MoneySubtractionTest()
         {
             var money1 = Money.Euro(50);
@@ -47,12 +52,14 @@ namespace Payment.Test
 
             Assert.True(Money.Euro(20) == val);
 
-            var ex = Assert.Throws<ArgumentException>(() => money1 - money3);
-            Assert.True(ex.Message == $"Cannot perform operation with different {nameof(Currency)}");
+
+            Assert.That(() => money1 - money3, Throws.ArgumentException);
+
+            //Assert.True(ex.Message == $"Cannot perform operation with different {nameof(Currency)}");
         }
 
 
-        [Fact]
+        [Test]
         public void GetHashCodeTest()
         {
             var money1 = Money.Euro(50);

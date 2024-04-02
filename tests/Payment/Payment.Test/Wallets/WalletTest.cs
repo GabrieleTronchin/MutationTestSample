@@ -1,24 +1,27 @@
+using NUnit.Framework;
 using Payment.Users;
 using Payment.Wallets;
+using System;
 
-namespace Payment.Test.Wallets
+namespace Payment.Test.Wallets;
+
+[TestFixture]
+
+public class WalletTest
 {
-    public class WalletTest
+    [Test]
+    public void Initialization_Correct()
     {
-        [Fact]
-        public void Initialization_Correct()
-        {
-            var user = new User("Test");
-            var wallet = new Wallet(user, Currency.EUR);
-            Assert.DoesNotContain("-", wallet.Id);
-            Assert.True(Guid.TryParse(wallet.Id, out var _));
-        }
+        var user = new User("Test");
+        var wallet = new Wallet(user, Currency.EUR);
+        Assert.False(wallet.Id.Contains("-"));
+        Assert.True(Guid.TryParse(wallet.Id, out var _));
+    }
 
-        [Fact]
-        public void Initialization_InvalidOwner()
-        {
-            var ex = Assert.Throws<ArgumentException>(() => new Wallet(null, Currency.EUR));
-            Assert.True(ex.Message == "Owner must be valid.");
-        }
+    [Test]
+    public void Initialization_InvalidOwner()
+    {
+        var ex = Assert.Throws<ArgumentException>(() => new Wallet(null, Currency.EUR));
+        Assert.True(ex.Message == "Owner must be valid.");
     }
 }
