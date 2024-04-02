@@ -1,4 +1,4 @@
-# How to user Stryker in .NET
+# How to Use Stryker in .NET
 
 ## Git Folder Structure
 
@@ -8,43 +8,58 @@ The repository's folder structure consists of:
 - **src**: holds the application's source code.
 - **test**: contains the test project.
 
-inside src a sample project with some logic.
-
-test project just refer payment library and contains some test.
+Inside `src`, there's a sample project called "payment" with some logic, while the test project references the payment library and contains some tests.
 
 ## Code Analysis
 
-To semplicity i use this tool to retrive the code coverage.
+To easily track code coverage within Visual Studio, consider using the FineCodeCoverage extension available [here](https://marketplace.visualstudio.com/items?itemName=FortuneNgwenya.FineCodeCoverage2022).
 
-As we can see code coverage seems grates.
+As depicted below, the code coverage appears satisfactory:
 
-![Alt text](./docs/Images/CodeCoverage-BeforeImprovement.png)
-
+![Code Coverage](./docs/Images/CodeCoverage.png)
 
 ### Analyzing Tests
 
-Reaching a satisfactory test coverage percentage does not guarantee well-written tests.
+Achieving a satisfactory test coverage percentage doesn't always ensure well-written tests.
 
-A useful tool to check the robustness of our tests is [Stryker](https://stryker-mutator.io/). 
+One useful tool to assess the robustness of our tests is [Stryker](https://stryker-mutator.io/).
 
-On the solution a powershell named "" is present. Using this tool from your Developer shell in visual studio.
-It's install and run stryker for you.
+Stryker.NET is a mutation testing tool designed specifically for .NET Core and .NET Framework projects. By injecting temporary bugs into the codebase, Stryker.NET enables developers to evaluate the resilience of their tests and identify areas for improvement.
 
-After the run stryker give you a mutation score:
+Included in the solution is a PowerShell script named `RunStryker.ps1`, which facilitates running Stryker directly from your Visual Studio Developer shell.
 
+After executing Stryker, it provides a mutation score:
 
-We can see that mutation score is not very high, so we can consult stryker output for details.
+![Mutation Score Before Improvements](./docs/Images/BeforeImprovements/60PercScore.png)
 
-- [Output at the first run](docs/StrykerOutput/BeforeImprovement/reports/mutation-report.html)
+However, upon inspection, the mutation score may not meet desired levels. In such cases, consulting the Stryker output for details is advisable:
 
-new tests has been written, in order to increare the mutation score.
+![Stryker Output Before Improvements](./docs/Images/BeforeImprovements/Stryker.png)
 
-here the result:
+By clicking on the HTML page, you can inspect which mutation tests survived:
 
-- [Output after fixing](docs/StrykerOutput/AfterImprovement/reports/mutation-report.html)
+![Mutator Survival Before Improvements](./docs/Images/BeforeImprovements/Stryker_MutatorSurvived.png)
 
-If you want to reproduce it:
-1. Disable or comment on test proejcts following Test: "" and "".
-2. run stryker
-3. ReEnable or un ciomment
-2. run stryker
+To review the HTML file, simply open this link:
+- [Low Mutation Score Report](./docs/StrykerOutput/LowMutationScore/mutation-report.html)
+
+Using this information, we can add new tests to our project in order to eliminate all the mutators.
+
+Here are the results after improvements:
+
+New Total Score:
+![Mutation Score After Improvements](./docs/Images/AfterImprovements/90PercScore.png)
+
+New Stryker Output:
+![Stryker Output After Improvements](./docs/Images/AfterImprovements/AfterImprovement_Overview.png)
+![Mutator Survival After Improvements](./docs/Images/AfterImprovements/AfterImprovement_MutationSample.png)
+
+To review the HTML file, simply open this link:
+- [High Mutation Score Report](./docs/StrykerOutput/HighMutationScore/mutation-report.html)
+
+To reproduce the process:
+
+1. Disable or comment out test projects following Test: "UserTestForKillMutators.cs" and "WalletTestForKillMutators.cs".
+2. Run Stryker.
+3. Re-enable or uncomment the tests.
+4. Run Stryker again.
