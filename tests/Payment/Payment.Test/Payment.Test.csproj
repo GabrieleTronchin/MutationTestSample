@@ -18,6 +18,6 @@
     <PackageReference Include="NUnit3TestAdapter" Version="4.2.1" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\src\Payment\Payment\Payment.csproj" />
+    <ProjectReference Include="..\..\..\src\Payment\Payment.csproj" />
   </ItemGroup>
 </Project>
