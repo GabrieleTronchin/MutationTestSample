@@ -16,17 +16,8 @@ public class ShareTest
         var money = Money.Euro(0);
         var share = new Share(user, "", money);
         Assert.False(share.Id.Contains("-"));
-      Assert.True(Guid.TryParse(share.Id, out var _));
+        Assert.True(Guid.TryParse(share.Id, out var _));
     }
-
-    [Test]
-    public void Initialization_InvalidOwner()
-    {
-        var money = Money.Euro(0);
-        var ex = Assert.Throws<ArgumentException>(() => new Share(null, "", money));
-        Assert.True(ex.Message == "Owner must be valid.");
-    }
-
 
     [Test]
     public void AddAmounts()

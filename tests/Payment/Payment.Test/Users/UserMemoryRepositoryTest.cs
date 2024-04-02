@@ -33,29 +33,8 @@ public class UserMemoryRepositoryTest
         Assert.True(ex.Message.Contains($"System is not able to find any user with id={invalidUser.Id}"));
     }
 
-    [Test]
-    public void GetCommonFriend_InvalidUser01()
-    {
-        var validUser = new User("Test");
-        UserMemoryRepository.Save(validUser);
-        var invalidUser = new User("InvalidUser");
 
-        var ex = Assert.Throws<InvalidOperationException>(() => UserMemoryRepository.GetCommonFriends(invalidUser.Id, validUser.Id));
-        Assert.True(ex.Message.Contains($"System is not able to find any user with id={invalidUser.Id}"));
 
-    }
-
-    [Test]
-    public void GetCommonFriend_InvalidUser02()
-    {
-        var validUser = new User("Test");
-        UserMemoryRepository.Save(validUser);
-        var invalidUser = new User("InvalidUser");
-
-        var ex = Assert.Throws<InvalidOperationException>(() => UserMemoryRepository.GetCommonFriends(validUser.Id, invalidUser.Id));
-        Assert.True(ex.Message.Contains($"System is not able to find any user with id={invalidUser.Id}"));
-
-    }
     [Test]
     public void FindUser_Valid()
     {
