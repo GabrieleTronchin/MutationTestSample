@@ -51,8 +51,8 @@ New Total Score:
 ![Mutation Score After Improvements](./docs/Images/AfterImprovements/90PercScore.png)
 
 New Stryker Output:
-![Stryker Output After Improvements](./docs/Images/AfterImprovements/AfterImprovement_Overview.png)
-![Mutator Survival After Improvements](./docs/Images/AfterImprovements/AfterImprovement_MutationSample.png)
+![Stryker Output After Improvements](./docs/Images/AfterImprovements/Overview.png)
+![Mutator Survival After Improvements](./docs/Images/AfterImprovements/MutationSample.png)
 
 To review the HTML file, simply open this link:
 - [High Mutation Score Report](./docs/StrykerOutput/HighMutationScore/mutation-report.html)
