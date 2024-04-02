@@ -1,6 +1,4 @@
 ﻿using NUnit.Framework;
-using Payment.Core;
-using Payment.Core.Contract.Service;
 using Payment.Users;
 using Payment.Wallets;
 using System;
@@ -8,9 +6,8 @@ using System.Linq;
 
 namespace Payment.Test.Wallets
 {
-    [Category("Step 2: Wallet Service")]
     [TestFixture]
-    public class Step3WalletServiceTests
+    public class WalletServiceTests
     {
         [Test]
         public void Test_CreateWallet()

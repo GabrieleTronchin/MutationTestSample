@@ -22,8 +22,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\Payment\Payment.Core\Payment.Core.csproj" />
-  </ItemGroup>
-
 </Project>

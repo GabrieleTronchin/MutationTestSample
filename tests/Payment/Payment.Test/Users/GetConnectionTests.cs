@@ -1,15 +1,12 @@
 ﻿using NUnit.Framework;
-using Payment.Core.Contract.Model;
-using Payment.Core.Contract.Service;
 using Payment.Users;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Payment.Test.Users
 {
-    [Category("Step 3: User Service")]
     [TestFixture]
-    public class Step2GetConnectionTests
+    public class GetConnectionTests
     {
         [Test]
         public void Test_GetConnectionList_With_Not_Connected_Users()

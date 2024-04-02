@@ -1,6 +1,4 @@
-﻿using Payment.Core.Contract.Model;
-using Payment.Core.Contract.Service;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace Payment.Users

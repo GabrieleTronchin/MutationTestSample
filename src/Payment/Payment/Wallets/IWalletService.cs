@@ -1,6 +1,6 @@
-﻿using Payment.Core.Contract.Model;
+﻿using Payment.Users;
 
-namespace Payment.Core.Contract.Service
+namespace Payment.Wallets
 {
     public interface IWalletService
     {

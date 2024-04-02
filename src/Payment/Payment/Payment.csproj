@@ -11,7 +11,4 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
   </PropertyGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Payment.Core\Payment.Core.csproj" />
-  </ItemGroup>
 </Project>

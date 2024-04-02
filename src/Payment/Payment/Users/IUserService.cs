@@ -1,7 +1,6 @@
-﻿using Payment.Core.Contract.Model;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace Payment.Core.Contract.Service
+namespace Payment.Users
 {
     public interface IUserService
     {

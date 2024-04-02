@@ -1,13 +1,12 @@
 ﻿using NUnit.Framework;
-using Payment.Core.Contract.Service;
 using Payment.Users;
 using System.Linq;
 
 namespace Payment.Test.Users
 {
-    [Category("Step 1: User Service")]
+    [Category("User Service")]
     [TestFixture]
-    public class Step1UserServiceTests
+    public class UserServiceTests
     {
 
         [Test]

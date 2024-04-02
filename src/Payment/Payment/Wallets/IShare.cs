@@ -1,4 +1,6 @@
-﻿namespace Payment.Core.Contract.Model
+﻿using Payment.Users;
+
+namespace Payment.Wallets
 {
     public interface IShare
     {

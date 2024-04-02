@@ -1,6 +1,6 @@
 using Payment.Users;
 
-namespace Payment.OutOfTask.Test
+namespace Payment.Test.Users
 {
     public class UserServiceTest
     {
@@ -74,7 +74,7 @@ namespace Payment.OutOfTask.Test
         public void GetCommonFriend_User01Null()
         {
             IUserService sut = new UserService();
-            var ex = Assert.Throws<ArgumentException>(() => sut.GetCommonFriends( null, new User("Test")));
+            var ex = Assert.Throws<ArgumentException>(() => sut.GetCommonFriends(null, new User("Test")));
             Assert.True(ex.Message == "Both users must be valid.");
         }
 

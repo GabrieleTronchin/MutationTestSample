@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Payment.Core.Contract.Model
+namespace Payment.Users
 {
     public interface IUser
     {

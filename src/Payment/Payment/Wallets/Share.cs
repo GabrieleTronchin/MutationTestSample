@@ -1,5 +1,4 @@
-﻿using Payment.Core;
-using Payment.Core.Contract.Model;
+﻿using Payment.Users;
 using System;
 
 namespace Payment.Wallets

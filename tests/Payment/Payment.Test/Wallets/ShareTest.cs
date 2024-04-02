@@ -1,7 +1,7 @@
 using Payment.Users;
 using Payment.Wallets;
 
-namespace Payment.OutOfTask.Test
+namespace Payment.Test.Wallets
 {
     public class ShareTest
     {

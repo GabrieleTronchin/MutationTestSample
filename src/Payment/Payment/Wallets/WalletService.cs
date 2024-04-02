@@ -1,6 +1,4 @@
-﻿using Payment.Core;
-using Payment.Core.Contract.Model;
-using Payment.Core.Contract.Service;
+﻿using Payment.Users;
 using System;
 using System.Linq;
 

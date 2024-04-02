@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using Payment.Users;
+using System.Collections.Generic;
 
-namespace Payment.Core.Contract.Model
+namespace Payment.Wallets
 {
     public interface IWallet
     {
