@@ -2,10 +2,10 @@
   "version": 1,
   "isRoot": true,
   "tools": {
-    "dotnet-stryker": {
-      "version": "4.0.3",
+    "csharpier": {
+      "version": "0.28.2",
       "commands": [
-        "dotnet-stryker"
+        "dotnet-csharpier"
       ]
     }
   }

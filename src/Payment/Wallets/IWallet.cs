@@ -1,5 +1,5 @@
-﻿using Payment.Users;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Payment.Users;
 
 namespace Payment.Wallets
 {
