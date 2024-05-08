@@ -17,6 +17,7 @@ namespace Payment
         {
             return new Money(amount, Currency.EUR);
         }
+
         public static Money Usd(long amount)
         {
             return new Money(amount, Currency.USD);
@@ -27,16 +28,23 @@ namespace Payment
             if (a.Currency == b.Currency)
                 return new Money(a.Value + b.Value, b.Currency);
 
-            throw new ArgumentException($"Cannot perform operation with different {nameof(Currency)}");
+            throw new ArgumentException(
+                $"Cannot perform operation with different {nameof(Currency)}"
+            );
         }
+
         public static bool operator ==(Money a, Money b) => a.Equals(b);
+
         public static bool operator !=(Money a, Money b) => !a.Equals(b);
+
         public static Money operator -(Money a, Money b)
         {
             if (a.Currency == b.Currency)
                 return new Money(a.Value - b.Value, b.Currency);
 
-            throw new ArgumentException($"Cannot perform operation with different {nameof(Currency)}");
+            throw new ArgumentException(
+                $"Cannot perform operation with different {nameof(Currency)}"
+            );
         }
 
         public bool Equals(Money other)

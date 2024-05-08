@@ -11,6 +11,7 @@ namespace Payment.Users
             Name = name;
             Friends = new List<IUser>();
         }
+
         public string Id { get; }
         public string Name { get; }
         public IList<IUser> Friends { get; }

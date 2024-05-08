@@ -1,6 +1,6 @@
-﻿using Payment.Users;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Payment.Users;
 
 namespace Payment.Wallets
 {
@@ -14,6 +14,7 @@ namespace Payment.Wallets
             Currency = currency;
             Shares = new List<IShare>();
         }
+
         public string Id { get; }
         public Money Amount { get; private set; }
         public IUser Owner { get; }

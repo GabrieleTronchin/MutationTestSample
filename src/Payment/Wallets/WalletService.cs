@@ -1,6 +1,6 @@
-﻿using Payment.Users;
-using System;
+﻿using System;
 using System.Linq;
+using Payment.Users;
 
 namespace Payment.Wallets
 {
@@ -20,9 +20,15 @@ namespace Payment.Wallets
 
         public void Contribute(IWallet wallet, IUser author, Money amount)
         {
-            if (wallet.Currency != amount.Currency) throw new ArgumentException("User should not be able to contribute in a different currency than the wallet one");
+            if (wallet.Currency != amount.Currency)
+                throw new ArgumentException(
+                    "User should not be able to contribute in a different currency than the wallet one"
+                );
 
-            if (amount.Value <= 0) throw new ArgumentException("User should not be able to contribute with a negative value");
+            if (amount.Value <= 0)
+                throw new ArgumentException(
+                    "User should not be able to contribute with a negative value"
+                );
 
             wallet.AddAmount(amount);
 

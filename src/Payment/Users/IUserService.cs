@@ -19,7 +19,7 @@ namespace Payment.Users
         IUser CreateUser(string name);
 
         /// <summary>
-        /// Add a friendship relation between user1 and user2 
+        /// Add a friendship relation between user1 and user2
         /// </summary>
         /// <param name="user1"></param>
         /// <param name="user2"></param>
@@ -47,7 +47,7 @@ namespace Payment.Users
         /// In general, if we note "-->" : is friend of and we have
         /// user1 --> friend 1 --> friend 2 --> ... --> friend N --> user2 , this method
         /// returns the list [user1, friend 1, friend 2, ..., friend N, user2]
-        /// if N > maxLevel then the method return an empty list 
+        /// if N > maxLevel then the method return an empty list
         /// </summary>
         /// <param name="user1"></param>
         /// <param name="user2"></param>

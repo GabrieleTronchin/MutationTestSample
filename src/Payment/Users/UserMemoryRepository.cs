@@ -22,7 +22,8 @@ namespace Payment.Users
         {
             var user2Delete = FindUser(id);
 
-            if (user2Delete == null) return;
+            if (user2Delete == null)
+                return;
 
             foreach (var user2 in user2Delete.Friends)
             {
@@ -34,8 +35,16 @@ namespace Payment.Users
 
         public static void AddFriend(string idUser1, string idUser2)
         {
-            var user1 = FindUser(idUser1) ?? throw new InvalidOperationException($"System is not able to find any user with id={idUser1}");
-            var user2 = FindUser(idUser2) ?? throw new InvalidOperationException($"System is not able to find any user with id={idUser2}");
+            var user1 =
+                FindUser(idUser1)
+                ?? throw new InvalidOperationException(
+                    $"System is not able to find any user with id={idUser1}"
+                );
+            var user2 =
+                FindUser(idUser2)
+                ?? throw new InvalidOperationException(
+                    $"System is not able to find any user with id={idUser2}"
+                );
 
             if (!user1.Friends.Contains(user2))
                 user1.Friends.Add(user2);
@@ -46,12 +55,18 @@ namespace Payment.Users
 
         public static IReadOnlyList<IUser> GetCommonFriends(string idUser1, string idUser2)
         {
-            var user1 = FindUser(idUser1) ?? throw new InvalidOperationException($"System is not able to find any user with id={idUser1}");
-            var user2 = FindUser(idUser2) ?? throw new InvalidOperationException($"System is not able to find any user with id={idUser2}");
+            var user1 =
+                FindUser(idUser1)
+                ?? throw new InvalidOperationException(
+                    $"System is not able to find any user with id={idUser1}"
+                );
+            var user2 =
+                FindUser(idUser2)
+                ?? throw new InvalidOperationException(
+                    $"System is not able to find any user with id={idUser2}"
+                );
 
             return user1.Friends.Intersect(user2.Friends).ToList();
         }
-
-
     }
 }
